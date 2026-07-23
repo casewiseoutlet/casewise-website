@@ -1,0 +1,37 @@
+CASEWISE ADMIN PORTAL - SETUP
+
+FILES TO UPLOAD TO GITHUB
+- index.html
+- style.css
+- script.js
+- verify.html
+- verify.css
+- verify.js
+- admin.html
+- admin.css
+- admin.js
+
+ADMIN PAGE
+https://your-domain/admin.html
+
+APPS SCRIPT
+1. Delete old Code.gs and paste the content of Code.gs from this ZIP.
+2. In setAdminPasswordOnce(), replace:
+   CHANGE-ME-TO-A-STRONG-PASSWORD
+   with your own password.
+3. Save and run setAdminPasswordOnce() one time.
+4. Run authorizeEverythingOnce() one time and allow permissions.
+5. Deploy > Manage deployments > Edit > New version > Deploy.
+6. Keep:
+   Execute as: Me
+   Who has access: Anyone
+
+WORKFLOW
+- Pending -> Approve -> Active
+- Active -> Complete & Email PDF
+- The system creates a PDF, saves it in Google Drive, emails it to the student,
+  sets Status to Completed, and updates verification details.
+
+IMPORTANT
+The admin password is stored in Apps Script Script Properties, not inside admin.js.
+Use a strong password and do not share it.

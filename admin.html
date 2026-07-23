@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Admin Portal | Casewise Outlet LTD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="grid"></div>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">CW</span>
+      <span>CASEWISE <b>OUTLET</b></span>
+    </a>
+    <button id="logoutButton" class="ghost hidden" type="button">Logout</button>
+  </header>
+
+  <main>
+    <section id="loginView" class="login-view">
+      <form id="loginForm" class="login-card">
+        <div class="mini-label">PRIVATE ACCESS</div>
+        <h1>Admin Portal</h1>
+        <p>Manage internship applications and issue completion certificates.</p>
+
+        <label for="adminPassword">Admin password</label>
+        <input id="adminPassword" type="password" autocomplete="current-password" required />
+
+        <button id="loginButton" type="submit">
+          <span>Open Dashboard</span>
+          <span class="spinner"></span>
+        </button>
+        <div id="loginMessage" class="message"></div>
+      </form>
+    </section>
+
+    <section id="dashboardView" class="dashboard hidden">
+      <div class="heading-row">
+        <div>
+          <div class="mini-label">INTERNSHIP MANAGEMENT</div>
+          <h1>Admin Dashboard</h1>
+        </div>
+        <button id="refreshButton" class="ghost" type="button">Refresh</button>
+      </div>
+
+      <div class="stats">
+        <article><span>Total</span><strong id="statTotal">0</strong></article>
+        <article><span>Pending</span><strong id="statPending">0</strong></article>
+        <article><span>Active</span><strong id="statActive">0</strong></article>
+        <article><span>Completed</span><strong id="statCompleted">0</strong></article>
+      </div>
+
+      <div class="toolbar">
+        <input id="searchInput" type="search" placeholder="Search name, email, ID or program..." />
+        <select id="statusFilter">
+          <option value="">All statuses</option>
+          <option value="Pending">Pending</option>
+          <option value="Active">Active</option>
+          <option value="Rejected">Rejected</option>
+          <option value="Completed">Completed</option>
+        </select>
+      </div>
+
+      <div id="dashboardMessage" class="message"></div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Internship ID</th>
+              <th>Student</th>
+              <th>Program</th>
+              <th>Duration</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="applicationsBody"></tbody>
+        </table>
+      </div>
+
+      <div id="emptyState" class="empty hidden">No matching applications found.</div>
+    </section>
+  </main>
+
+  <div id="confirmModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <h2 id="modalTitle">Confirm action</h2>
+      <p id="modalText"></p>
+      <div class="modal-actions">
+        <button id="cancelModal" class="ghost" type="button">Cancel</button>
+        <button id="confirmAction" class="primary" type="button">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

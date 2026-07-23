@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Verify a Casewise Outlet LTD internship letter using its Internship ID and Verification Code." />
+  <title>Verify Internship Letter | Casewise Outlet LTD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="verify.css" />
+</head>
+<body>
+  <div class="background-grid"></div>
+  <div class="orb orb-one"></div>
+  <div class="orb orb-two"></div>
+
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="logo" aria-label="Casewise Outlet LTD home">
+        <span class="logo-box">CW</span>
+        <span class="logo-text">CASEWISE <b>OUTLET</b></span>
+      </a>
+      <a class="back-link" href="index.html">← Back to Website</a>
+    </div>
+  </header>
+
+  <main class="verification-section">
+    <div class="container verification-layout">
+      <section class="intro">
+        <div class="eyebrow"><span></span> OFFICIAL VERIFICATION PORTAL</div>
+        <h1>Verify an<br /><em>Internship Letter.</em></h1>
+        <p>
+          Enter the Internship ID and Verification Code printed on the
+          Casewise Outlet LTD letter.
+        </p>
+
+        <div class="trust-list">
+          <div><strong>01</strong><span>Secure record lookup</span></div>
+          <div><strong>02</strong><span>Instant verification result</span></div>
+          <div><strong>03</strong><span>Official company database</span></div>
+        </div>
+      </section>
+
+      <section class="verify-card">
+        <div class="card-top">
+          <div>
+            <span>DOCUMENT CHECK</span>
+            <h2>Letter Verification</h2>
+          </div>
+          <div class="secure-badge">● SECURE</div>
+        </div>
+
+        <form id="verifyForm" novalidate>
+          <div class="field">
+            <label for="internshipId">Internship ID</label>
+            <input
+              id="internshipId"
+              name="internshipId"
+              type="text"
+              placeholder="CW-2026-0001"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="verificationCode">Verification Code</label>
+            <input
+              id="verificationCode"
+              name="verificationCode"
+              type="text"
+              placeholder="ABC123"
+              maxlength="20"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <button id="verifyButton" type="submit">
+            <span class="button-text">Verify Letter</span>
+            <span class="loader" aria-hidden="true"></span>
+            <span class="arrow">→</span>
+          </button>
+
+          <div id="formNotice" class="notice" role="status" aria-live="polite"></div>
+        </form>
+
+        <div id="resultCard" class="result-card" hidden>
+          <div id="resultIcon" class="result-icon">✓</div>
+          <div class="result-heading">
+            <span id="resultLabel">VERIFIED RECORD</span>
+            <h3 id="resultTitle">Internship Letter Verified</h3>
+            <p id="resultDescription">This record was found in the official database.</p>
+          </div>
+
+          <div id="recordDetails" class="record-details">
+            <div><span>Candidate Name</span><strong id="resultName">—</strong></div>
+            <div><span>Internship ID</span><strong id="resultId">—</strong></div>
+            <div><span>Program</span><strong id="resultProgram">—</strong></div>
+            <div><span>Duration</span><strong id="resultDuration">—</strong></div>
+            <div><span>Status</span><strong id="resultStatus">—</strong></div>
+            <div><span>Issue Date</span><strong id="resultIssueDate">—</strong></div>
+            <div><span>Completion Date</span><strong id="resultCompletionDate">—</strong></div>
+          </div>
+
+          <button id="verifyAnother" class="secondary-button" type="button">Verify Another Letter</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Casewise Outlet LTD. All Rights Reserved.
+  </footer>
+
+  <script src="verify.js"></script>
+</body>
+</html>
